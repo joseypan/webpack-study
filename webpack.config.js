@@ -1,11 +1,3 @@
-module.exports = {
-  entry: {
-    index: "./src/index.js",
-    test: "./src/test.js",
-  },
-  output: {
-    filename: "[name]-[hash].js",
-    path: __dirname + "/output",
-  },
-  mode: "production",
-};
+const devConfg = require("./config/dev.config");
+const prodConfig = require("./config/prod.config");
+module.exports = process.env.NODE_ENV === "development" ? devConfg : prodConfig;
