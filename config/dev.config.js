@@ -1,8 +1,11 @@
 const path = require("path");
 const config = {
-  entry: "/src/index.js",
+  entry: {
+    index: "/src/index.js",
+    demo: "/src/demo.js",
+  },
   output: {
-    filename: "index.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "../dist"),
   },
 };
